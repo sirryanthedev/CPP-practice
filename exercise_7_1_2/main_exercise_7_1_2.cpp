@@ -14,20 +14,24 @@ int main()
     cod.set_name("Call of duty");
     // Game (subclass) methods
     cod.set_type("cross-platform");
-    cod.set_esrb("Mature 17+");
+    cod.set_esrb(18);
     cod.print_info();
 
     // create an instance of Book and test functionality
     Book harrypotter{};
+    harrypotter.set_name("Harry Potter and the Philosopher's Stone");
+    harrypotter.set_price(49);
     harrypotter.set_author("J. K. Rowling");
-    harrypotter.set_isbn(9780747532743);
+    harrypotter.set_isbn("978-0-7475-3269-9");
     harrypotter.print_info();
 
     // create an instance of Comic and test functionality
     Comic watchmen{};
     // base class methods
+    watchmen.set_name("Watchmen by Alan Moore; Dave Gibbons (Illustrator)");
+    watchmen.set_price(39);
     watchmen.set_author("Alan Moore & Dave Gibbons");
-    watchmen.set_isbn(9781401245252);
+    watchmen.set_isbn("9781401245252");
     // Comic (subclass) methods
     watchmen.set_serial_name("Watchmen (often referred to in catalogs as Watchmen Vol. 1 or simply the Watchmen limited series)");
     watchmen.set_serial_number(12);
