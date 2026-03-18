@@ -38,8 +38,8 @@ public:
     void print_info() const;
 
     // setters
-    void set_type(std::string& type);
-    void set_esrb(int& esrb);
+    void set_type(const std::string& type);
+    void set_esrb(int esrb);
 private:
     std::string m_type{}; // e.g. pc, ps4, xbox one, etc.
     int m_esrb{};
@@ -50,15 +50,15 @@ class Book : public Article
 public:
     // getters
     std::string get_author() const;
-    int get_isbn() const;
+    std::string get_isbn() const;
     void print_info() const;
 
     // setters
     void set_author(const std::string& author);
-    void set_isbn(const int& isbn);
+    void set_isbn(const std::string& isbn);
 private:
     std::string m_author{};
-    int m_isbn{};
+    std::string m_isbn{};
 };
 
 class Comic : public Book
