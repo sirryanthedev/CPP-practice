@@ -19,9 +19,8 @@ Article::Article(const Article& other) : m_name{other.m_name}, m_price{other.m_p
     std::cout << "Copy constructor called for instance of Article" << std::endl;
 }
 
-Article::Article(Article&& other) noexcept : m_name{other.m_name}, m_price{other.m_price}
+Article::Article(Article&& other) noexcept : m_name{std::move(other.m_name)}, m_price{other.m_price}
 {
-    other.m_name = '\0';
     other.m_price = 0;
     std::cout << "Move constructor called for instance of Article" << std::endl;
 }
@@ -77,12 +76,12 @@ void Game::print_info() const
 
 // setters
 
-void Game::set_type(std::string& type)
+void Game::set_type(const std::string& type)
 {
     m_type = type;
 }
 
-void Game::set_esrb(int& esrb)
+void Game::set_esrb(int esrb)
 {
     m_esrb = esrb;
 }
@@ -96,7 +95,7 @@ std::string Book::get_author() const
     return m_author;
 }
 
-int Book::get_isbn() const
+std::string Book::get_isbn() const
 {
 return m_isbn;
 }
@@ -113,7 +112,7 @@ void Book::set_author(const std::string& author)
     m_author = author;
 }
 
-void Book::set_isbn(const int& isbn)
+void Book::set_isbn(const std::string& isbn)
 {
     m_isbn = isbn;
 }
