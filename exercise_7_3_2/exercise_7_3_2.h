@@ -9,6 +9,7 @@ class Vector
         // methods
         void print_elements() const;
         void add_element(double element);
+        double& operator[](int i);
     private:
         int m_nelements{}; // number of elements
         double* m_elements{}; // pointer to elements

@@ -1,6 +1,6 @@
 #include "exercise_7_3_2.h"
 #include <iostream>
-// #include <cstdlib>
+#include <cstdlib>
 
 // destructor
 Vector::~Vector()
@@ -71,4 +71,13 @@ void Vector::print_elements() const
             std::cout << m_elements[i] << std::endl;
         }
     }
+}
+
+double& Vector::operator[](int i)
+{
+    if (m_elements && ((i >= 0) && (i < m_nelements)))
+    {
+        return m_elements[i];
+    }
+    throw std::out_of_range("Vector index is out of bounds");
 }
